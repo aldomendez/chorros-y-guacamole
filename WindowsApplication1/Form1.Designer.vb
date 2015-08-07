@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ipShow = New System.Windows.Forms.Label()
         Me.action = New System.Windows.Forms.Label()
@@ -53,6 +54,15 @@ Partial Class Form1
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.Button22 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -200,11 +210,11 @@ Partial Class Form1
         'ProgressBar1
         '
         Me.ProgressBar1.Location = New System.Drawing.Point(12, 74)
-        Me.ProgressBar1.Maximum = 10
+        Me.ProgressBar1.Maximum = 9
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(75, 12)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 7
-        Me.ProgressBar1.Value = 4
         '
         'Button8
         '
@@ -239,11 +249,11 @@ Partial Class Form1
         'ProgressBar2
         '
         Me.ProgressBar2.Location = New System.Drawing.Point(12, 74)
-        Me.ProgressBar2.Maximum = 10
+        Me.ProgressBar2.Maximum = 9
         Me.ProgressBar2.Name = "ProgressBar2"
         Me.ProgressBar2.Size = New System.Drawing.Size(75, 12)
+        Me.ProgressBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar2.TabIndex = 7
-        Me.ProgressBar2.Value = 4
         '
         'Button10
         '
@@ -278,11 +288,11 @@ Partial Class Form1
         'ProgressBar3
         '
         Me.ProgressBar3.Location = New System.Drawing.Point(12, 74)
-        Me.ProgressBar3.Maximum = 10
+        Me.ProgressBar3.Maximum = 9
         Me.ProgressBar3.Name = "ProgressBar3"
         Me.ProgressBar3.Size = New System.Drawing.Size(75, 12)
+        Me.ProgressBar3.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar3.TabIndex = 7
-        Me.ProgressBar3.Value = 4
         '
         'Button12
         '
@@ -316,7 +326,7 @@ Partial Class Form1
         '
         'Button15
         '
-        Me.Button15.Location = New System.Drawing.Point(76, 48)
+        Me.Button15.Location = New System.Drawing.Point(76, 26)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(75, 23)
         Me.Button15.TabIndex = 11
@@ -325,7 +335,7 @@ Partial Class Form1
         '
         'Button16
         '
-        Me.Button16.Location = New System.Drawing.Point(76, 106)
+        Me.Button16.Location = New System.Drawing.Point(76, 84)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(75, 23)
         Me.Button16.TabIndex = 12
@@ -334,7 +344,7 @@ Partial Class Form1
         '
         'Button17
         '
-        Me.Button17.Location = New System.Drawing.Point(26, 77)
+        Me.Button17.Location = New System.Drawing.Point(26, 55)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(75, 23)
         Me.Button17.TabIndex = 13
@@ -343,7 +353,7 @@ Partial Class Form1
         '
         'Button18
         '
-        Me.Button18.Location = New System.Drawing.Point(120, 77)
+        Me.Button18.Location = New System.Drawing.Point(120, 55)
         Me.Button18.Name = "Button18"
         Me.Button18.Size = New System.Drawing.Size(75, 23)
         Me.Button18.TabIndex = 14
@@ -352,6 +362,11 @@ Partial Class Form1
         '
         'GroupBox7
         '
+        Me.GroupBox7.Controls.Add(Me.Button22)
+        Me.GroupBox7.Controls.Add(Me.Button21)
+        Me.GroupBox7.Controls.Add(Me.Button20)
+        Me.GroupBox7.Controls.Add(Me.Label1)
+        Me.GroupBox7.Controls.Add(Me.Button19)
         Me.GroupBox7.Controls.Add(Me.Button16)
         Me.GroupBox7.Controls.Add(Me.Button18)
         Me.GroupBox7.Controls.Add(Me.Button15)
@@ -362,6 +377,59 @@ Partial Class Form1
         Me.GroupBox7.TabIndex = 15
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Control continuo"
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 200
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 200
+        '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(18, 150)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(40, 22)
+        Me.Button19.TabIndex = 15
+        Me.Button19.Text = "1"
+        Me.Button19.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(16, 128)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(54, 13)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Velocidad"
+        '
+        'Button20
+        '
+        Me.Button20.Location = New System.Drawing.Point(64, 150)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(40, 22)
+        Me.Button20.TabIndex = 17
+        Me.Button20.Text = "2"
+        Me.Button20.UseVisualStyleBackColor = True
+        '
+        'Button21
+        '
+        Me.Button21.Location = New System.Drawing.Point(110, 150)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(40, 22)
+        Me.Button21.TabIndex = 18
+        Me.Button21.Text = "3"
+        Me.Button21.UseVisualStyleBackColor = True
+        '
+        'Button22
+        '
+        Me.Button22.Location = New System.Drawing.Point(156, 150)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(40, 22)
+        Me.Button22.TabIndex = 19
+        Me.Button22.Text = "4"
+        Me.Button22.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -390,6 +458,7 @@ Partial Class Form1
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -426,4 +495,13 @@ Partial Class Form1
     Friend WithEvents Button17 As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents Timer3 As Timer
+    Friend WithEvents Timer4 As Timer
+    Friend WithEvents Button22 As Button
+    Friend WithEvents Button21 As Button
+    Friend WithEvents Button20 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button19 As Button
 End Class

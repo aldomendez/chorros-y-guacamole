@@ -7,6 +7,9 @@ Public Class gbl
     Public Shared telnetPort As Integer = 23
     Public Shared Property ThisStream As NetworkStream
     Public Shared TelnetClient As TcpClient
+    Public Shared valvX As Integer = 0
+    Public Shared valvY As Integer = 0
+    Public Shared valvZ As Integer = 0
 
     Public Shared Function getTelnetStatus() As String
         Return TelnetClient.Connected
