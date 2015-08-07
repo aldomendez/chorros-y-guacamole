@@ -54,10 +54,6 @@ Public Class Form1
         ipShow.Text = "shown: " & gbl.getTelnetStatus() & " from " & gbl.IPaddress
     End Sub
 
-    Private Sub a1_Click(sender As Object, e As EventArgs)
-        telnetMessage(gbl.valv1)
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         telnetMessage("W1")
     End Sub
