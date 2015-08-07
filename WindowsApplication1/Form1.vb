@@ -163,28 +163,28 @@ Public Class Form1
         Timer1.Interval = 100
         Timer2.Interval = 100
         Timer3.Interval = 100
-        Timer3.Interval = 100
+        Timer4.Interval = 100
     End Sub
 
     Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
         Timer1.Interval = 200
         Timer2.Interval = 200
         Timer3.Interval = 300
-        Timer3.Interval = 400
+        Timer4.Interval = 400
     End Sub
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         Timer1.Interval = 300
         Timer2.Interval = 300
         Timer3.Interval = 300
-        Timer3.Interval = 300
+        Timer4.Interval = 300
     End Sub
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
         Timer1.Interval = 500
         Timer2.Interval = 500
         Timer3.Interval = 500
-        Timer3.Interval = 500
+        Timer4.Interval = 500
     End Sub
 
     Private Sub Button16_MouseDown(sender As Object, e As MouseEventArgs) Handles Button16.MouseDown

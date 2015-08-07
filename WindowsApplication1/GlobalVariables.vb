@@ -15,11 +15,19 @@ Public Class gbl
         Return TelnetClient.Connected
     End Function
     Public Shared Sub connect()
-        'Connect to server (next 2 lines)
+        Dim SendBuffer(128) As Byte
+        Dim ReadBuffer(256) As Byte
+        Dim ReturnVal As String
+        Dim ReturnLength As Integer
+
         TelnetClient = New TcpClient()
         Try
             TelnetClient.Connect(IPaddress, telnetPort)
             ThisStream = TelnetClient.GetStream
+
+            ReturnLength = gbl.ThisStream.Read(ReadBuffer, 0, ReadBuffer.Length)
+            ReturnVal = Encoding.ASCII.GetString(ReadBuffer, 0, ReturnLength)
+            Form1.telnetAns.Text = " --> " + ReturnVal & vbCrLf & Form1.telnetAns.Text
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
