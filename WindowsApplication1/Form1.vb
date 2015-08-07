@@ -186,4 +186,32 @@ Public Class Form1
         Timer3.Interval = 500
         Timer3.Interval = 500
     End Sub
+
+    Private Sub Button16_MouseDown(sender As Object, e As MouseEventArgs) Handles Button16.MouseDown
+        Timer3.Start()
+    End Sub
+
+    Private Sub Button16_MouseUp(sender As Object, e As MouseEventArgs) Handles Button16.MouseUp
+        Timer3.Stop()
+    End Sub
+
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        If gbl.getTelnetStatus() = True Then
+            telnetMessage("A3")
+        End If
+    End Sub
+
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        If gbl.getTelnetStatus() = True Then
+            telnetMessage("A4")
+        End If
+    End Sub
+
+    Private Sub Button17_MouseDown(sender As Object, e As MouseEventArgs) Handles Button17.MouseDown
+        Timer4.Start()
+    End Sub
+
+    Private Sub Button17_MouseUp(sender As Object, e As MouseEventArgs) Handles Button17.MouseUp
+        Timer4.Stop()
+    End Sub
 End Class

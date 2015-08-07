@@ -54,15 +54,15 @@ Partial Class Form1
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button19 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
-        Me.Button19 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button20 = New System.Windows.Forms.Button()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button22 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -378,40 +378,14 @@ Partial Class Form1
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Control continuo"
         '
-        'Timer1
+        'Button22
         '
-        Me.Timer1.Interval = 200
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 200
-        '
-        'Button19
-        '
-        Me.Button19.Location = New System.Drawing.Point(18, 150)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(40, 22)
-        Me.Button19.TabIndex = 15
-        Me.Button19.Text = "1"
-        Me.Button19.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 128)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 13)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "Velocidad"
-        '
-        'Button20
-        '
-        Me.Button20.Location = New System.Drawing.Point(64, 150)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(40, 22)
-        Me.Button20.TabIndex = 17
-        Me.Button20.Text = "2"
-        Me.Button20.UseVisualStyleBackColor = True
+        Me.Button22.Location = New System.Drawing.Point(156, 150)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(40, 22)
+        Me.Button22.TabIndex = 19
+        Me.Button22.Text = "4"
+        Me.Button22.UseVisualStyleBackColor = True
         '
         'Button21
         '
@@ -422,14 +396,46 @@ Partial Class Form1
         Me.Button21.Text = "3"
         Me.Button21.UseVisualStyleBackColor = True
         '
-        'Button22
+        'Button20
         '
-        Me.Button22.Location = New System.Drawing.Point(156, 150)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(40, 22)
-        Me.Button22.TabIndex = 19
-        Me.Button22.Text = "4"
-        Me.Button22.UseVisualStyleBackColor = True
+        Me.Button20.Location = New System.Drawing.Point(64, 150)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(40, 22)
+        Me.Button20.TabIndex = 17
+        Me.Button20.Text = "2"
+        Me.Button20.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(16, 128)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(54, 13)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Velocidad"
+        '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(18, 150)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(40, 22)
+        Me.Button19.TabIndex = 15
+        Me.Button19.Text = "1"
+        Me.Button19.UseVisualStyleBackColor = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 200
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 200
+        '
+        'Timer3
+        '
+        '
+        'Timer4
+        '
         '
         'Form1
         '
