@@ -63,6 +63,7 @@ Partial Class Form1
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.telnetAns = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -74,7 +75,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(127, 232)
+        Me.Button1.Location = New System.Drawing.Point(230, 232)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 0
@@ -84,7 +85,7 @@ Partial Class Form1
         'ipShow
         '
         Me.ipShow.AutoSize = True
-        Me.ipShow.Location = New System.Drawing.Point(222, 237)
+        Me.ipShow.Location = New System.Drawing.Point(325, 237)
         Me.ipShow.Name = "ipShow"
         Me.ipShow.Size = New System.Drawing.Size(149, 13)
         Me.ipShow.TabIndex = 1
@@ -93,7 +94,7 @@ Partial Class Form1
         'action
         '
         Me.action.AutoSize = True
-        Me.action.Location = New System.Drawing.Point(222, 224)
+        Me.action.Location = New System.Drawing.Point(325, 224)
         Me.action.Name = "action"
         Me.action.Size = New System.Drawing.Size(37, 13)
         Me.action.TabIndex = 2
@@ -101,7 +102,7 @@ Partial Class Form1
         '
         'btnStartConnection
         '
-        Me.btnStartConnection.Location = New System.Drawing.Point(127, 203)
+        Me.btnStartConnection.Location = New System.Drawing.Point(230, 203)
         Me.btnStartConnection.Name = "btnStartConnection"
         Me.btnStartConnection.Size = New System.Drawing.Size(75, 23)
         Me.btnStartConnection.TabIndex = 3
@@ -319,7 +320,7 @@ Partial Class Form1
         Me.Button14.ForeColor = System.Drawing.Color.White
         Me.Button14.Location = New System.Drawing.Point(12, 196)
         Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(97, 92)
+        Me.Button14.Size = New System.Drawing.Size(200, 59)
         Me.Button14.TabIndex = 10
         Me.Button14.Text = "Paro de Emergencia"
         Me.Button14.UseVisualStyleBackColor = False
@@ -425,23 +426,34 @@ Partial Class Form1
         '
         'Timer1
         '
-        Me.Timer1.Interval = 200
+        Me.Timer1.Interval = 300
         '
         'Timer2
         '
-        Me.Timer2.Interval = 200
+        Me.Timer2.Interval = 300
         '
         'Timer3
         '
+        Me.Timer3.Interval = 300
         '
         'Timer4
         '
+        Me.Timer4.Interval = 300
+        '
+        'telnetAns
+        '
+        Me.telnetAns.Location = New System.Drawing.Point(12, 261)
+        Me.telnetAns.Multiline = True
+        Me.telnetAns.Name = "telnetAns"
+        Me.telnetAns.Size = New System.Drawing.Size(543, 186)
+        Me.telnetAns.TabIndex = 16
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(571, 460)
+        Me.Controls.Add(Me.telnetAns)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.Button14)
         Me.Controls.Add(Me.GroupBox6)
@@ -510,4 +522,5 @@ Partial Class Form1
     Friend WithEvents Button20 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Button19 As Button
+    Friend WithEvents telnetAns As TextBox
 End Class

@@ -27,10 +27,10 @@ Public Class Form1
                 SendBuffer = Encoding.ASCII.GetBytes(msg)
                 gbl.ThisStream.Write(SendBuffer, 0, SendBuffer.Length)
 
-                ReturnVal = Encoding.ASCII.GetString(ReadBuffer)
+                'ReturnVal = Encoding.ASCII.GetString(ReadBuffer)
                 ReturnLength = gbl.ThisStream.Read(ReadBuffer, 0, ReadBuffer.Length)
                 ReturnVal = Encoding.ASCII.GetString(ReadBuffer)
-                Debug.WriteLine(ReturnVal)
+                telnetAns.Text = msg & " --> " & ReturnVal & vbCrLf & telnetAns.Text
             Else
                 MsgBox("Conection closed, you must have to click the Connect Button")
             End If
