@@ -445,6 +445,7 @@ Partial Class Form1
         Me.telnetAns.Location = New System.Drawing.Point(12, 261)
         Me.telnetAns.Multiline = True
         Me.telnetAns.Name = "telnetAns"
+        Me.telnetAns.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.telnetAns.Size = New System.Drawing.Size(543, 186)
         Me.telnetAns.TabIndex = 16
         '
