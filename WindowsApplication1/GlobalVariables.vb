@@ -31,21 +31,25 @@ Public Class gbl
         Dim ReadBuffer(256) As Byte
         Dim ReturnVal As String
         Dim ReturnLength As Integer
-
         TelnetClient = New TcpClient()
         Try
+
             TelnetClient.Connect(IPaddress, telnetPort)
             ThisStream = TelnetClient.GetStream
-
+            Threading.Thread.Sleep(2000)
             ReturnLength = gbl.ThisStream.Read(ReadBuffer, 0, ReadBuffer.Length)
             ReturnVal = Encoding.ASCII.GetString(ReadBuffer, 0, ReturnLength)
-            Form1.telnetAns.Text = " --> " + ReturnVal & vbCrLf & Form1.telnetAns.Text
+
+            Form1.telnetAns.Text = "connection --> " + ReturnVal & vbCrLf & Form1.telnetAns.Text
+            Form1.btnStartConnection.Text = "Disconect"
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Public Shared Sub disconect()
         TelnetClient.Close()
+        Form1.telnetAns.Text = "[x] connection closed"
+        Form1.btnStartConnection.Text = "Connect"
     End Sub
 
     Public Shared Sub tcpStart()

@@ -41,12 +41,11 @@ Public Class Form1
     End Sub
 
     Private Sub btnStartConnection_Click(sender As Object, e As EventArgs) Handles btnStartConnection.Click
+        btnStartConnection.Text = "Connecting..."
         If gbl.getTelnetStatus() = False Then
             gbl.connect()
-            btnStartConnection.Text = "Disconect"
         Else
             gbl.disconect()
-            btnStartConnection.Text = "Connect"
         End If
     End Sub
 
@@ -131,27 +130,32 @@ Public Class Form1
     End Sub
 
     Private Sub Button15_MouseDown(sender As Object, e As MouseEventArgs) Handles Button15.MouseDown
+        adelante()
         Timer1.Start()
-
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        adelante()
+    End Sub
+    Sub adelante()
         If gbl.getTelnetStatus() = True Then
             telnetMessage("A1")
         End If
     End Sub
-
     Private Sub Button15_MouseUp(sender As Object, e As MouseEventArgs) Handles Button15.MouseUp
         Timer1.Stop()
     End Sub
-
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Sub derecha()
         If gbl.getTelnetStatus() = True Then
             telnetMessage("A2")
         End If
     End Sub
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        derecha()
+    End Sub
 
     Private Sub Button18_MouseDown(sender As Object, e As MouseEventArgs) Handles Button18.MouseDown
+        derecha()
         Timer2.Start()
     End Sub
 
@@ -188,30 +192,37 @@ Public Class Form1
     End Sub
 
     Private Sub Button16_MouseDown(sender As Object, e As MouseEventArgs) Handles Button16.MouseDown
+        abajo()
         Timer3.Start()
     End Sub
 
     Private Sub Button16_MouseUp(sender As Object, e As MouseEventArgs) Handles Button16.MouseUp
         Timer3.Stop()
     End Sub
-
-    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+    Sub abajo()
         If gbl.getTelnetStatus() = True Then
             telnetMessage("A3")
         End If
     End Sub
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        abajo()
+    End Sub
 
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        izquierda()
+    End Sub
+    Sub izquierda()
         If gbl.getTelnetStatus() = True Then
             telnetMessage("A4")
         End If
     End Sub
-
     Private Sub Button17_MouseDown(sender As Object, e As MouseEventArgs) Handles Button17.MouseDown
+        izquierda()
         Timer4.Start()
     End Sub
 
     Private Sub Button17_MouseUp(sender As Object, e As MouseEventArgs) Handles Button17.MouseUp
         Timer4.Stop()
     End Sub
+
 End Class
