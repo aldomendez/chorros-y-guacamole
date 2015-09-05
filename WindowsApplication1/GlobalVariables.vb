@@ -11,6 +11,7 @@ Public Class gbl
     Public Shared valvX As Integer = 0
     Public Shared valvY As Integer = 0
     Public Shared valvZ As Integer = 0
+    Public Shared speed As Integer = defaultVal("control", "speed", 5)
 
     Public Shared Function getTelnetStatus() As String
         Return TelnetClient.Connected

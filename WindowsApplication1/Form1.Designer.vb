@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
@@ -38,10 +39,7 @@ Partial Class Form1
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.telnetAns = New System.Windows.Forms.TextBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ProgressBar3 = New System.Windows.Forms.ProgressBar()
@@ -67,12 +65,12 @@ Partial Class Form1
         Me.btnStartConnection = New System.Windows.Forms.Button()
         Me.action = New System.Windows.Forms.Label()
         Me.ipShow = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -187,7 +185,6 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.btnStartConnection)
         Me.TabPage1.Controls.Add(Me.action)
         Me.TabPage1.Controls.Add(Me.ipShow)
-        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -207,10 +204,7 @@ Partial Class Form1
         '
         'GroupBox7
         '
-        Me.GroupBox7.Controls.Add(Me.Button16)
-        Me.GroupBox7.Controls.Add(Me.Button18)
-        Me.GroupBox7.Controls.Add(Me.Button15)
-        Me.GroupBox7.Controls.Add(Me.Button17)
+        Me.GroupBox7.Controls.Add(Me.PictureBox1)
         Me.GroupBox7.Location = New System.Drawing.Point(322, 6)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(218, 178)
@@ -218,41 +212,14 @@ Partial Class Form1
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Control continuo"
         '
-        'Button16
+        'PictureBox1
         '
-        Me.Button16.Location = New System.Drawing.Point(76, 84)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(75, 23)
-        Me.Button16.TabIndex = 12
-        Me.Button16.Text = "Atras"
-        Me.Button16.UseVisualStyleBackColor = True
-        '
-        'Button18
-        '
-        Me.Button18.Location = New System.Drawing.Point(120, 55)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(75, 23)
-        Me.Button18.TabIndex = 14
-        Me.Button18.Text = "Derecha"
-        Me.Button18.UseVisualStyleBackColor = True
-        '
-        'Button15
-        '
-        Me.Button15.Location = New System.Drawing.Point(76, 26)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(75, 23)
-        Me.Button15.TabIndex = 11
-        Me.Button15.Text = "Adelante"
-        Me.Button15.UseVisualStyleBackColor = True
-        '
-        'Button17
-        '
-        Me.Button17.Location = New System.Drawing.Point(26, 55)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(75, 23)
-        Me.Button17.TabIndex = 13
-        Me.Button17.Text = "Izquierda"
-        Me.Button17.UseVisualStyleBackColor = True
+        Me.PictureBox1.BackColor = System.Drawing.Color.Black
+        Me.PictureBox1.Location = New System.Drawing.Point(76, 62)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(65, 54)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Button14
         '
@@ -472,7 +439,7 @@ Partial Class Form1
         '
         'btnStartConnection
         '
-        Me.btnStartConnection.Location = New System.Drawing.Point(224, 197)
+        Me.btnStartConnection.Location = New System.Drawing.Point(224, 226)
         Me.btnStartConnection.Name = "btnStartConnection"
         Me.btnStartConnection.Size = New System.Drawing.Size(75, 23)
         Me.btnStartConnection.TabIndex = 20
@@ -497,15 +464,6 @@ Partial Class Form1
         Me.ipShow.TabIndex = 18
         Me.ipShow.Text = "Conected to 999.999.999.999"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(224, 226)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Config"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
@@ -522,6 +480,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(577, 368)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(593, 407)
         Me.Name = "Form1"
         Me.Text = "Telnet Message Board"
@@ -531,6 +490,7 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
@@ -549,10 +509,6 @@ Partial Class Form1
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents telnetAns As TextBox
     Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button18 As Button
-    Friend WithEvents Button15 As Button
-    Friend WithEvents Button17 As Button
     Friend WithEvents Button14 As Button
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents ProgressBar3 As ProgressBar
@@ -578,7 +534,6 @@ Partial Class Form1
     Friend WithEvents btnStartConnection As Button
     Friend WithEvents action As Label
     Friend WithEvents ipShow As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label4 As Label
@@ -587,4 +542,5 @@ Partial Class Form1
     Friend WithEvents Button23 As Button
     Friend WithEvents addInput As MaskedTextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
