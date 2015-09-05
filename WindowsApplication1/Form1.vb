@@ -2,7 +2,7 @@
 Imports System.Text
 Public Class Form1
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Form2.Show()
         Me.Hide()
     End Sub
@@ -40,7 +40,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub btnStartConnection_Click(sender As Object, e As EventArgs) Handles btnStartConnection.Click
+    Private Sub btnStartConnection_Click(sender As Object, e As EventArgs)
         btnStartConnection.Text = "Connecting..."
         If gbl.getTelnetStatus() = False Then
             gbl.connect()
@@ -53,31 +53,31 @@ Public Class Form1
         ipShow.Text = "shown: " & gbl.getTelnetStatus() & " from " & gbl.IPaddress
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         telnetMessage("W1")
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         telnetMessage("W2")
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         telnetMessage("W3")
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
         telnetMessage("W4")
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs)
         telnetMessage("W5")
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
         telnetMessage("W6")
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs)
         If gbl.valvX <= 8 Then
             gbl.valvX = gbl.valvX + 1
             ProgressBar1.Value = gbl.valvX
@@ -85,7 +85,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
         If gbl.valvX >= 1 Then
             gbl.valvX = gbl.valvX - 1
             ProgressBar1.Value = gbl.valvX
@@ -93,7 +93,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Button11_Click(sender As Object, e As EventArgs)
         If gbl.valvY <= 8 Then
             gbl.valvY = gbl.valvY + 1
             ProgressBar2.Value = gbl.valvY
@@ -101,7 +101,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click(sender As Object, e As EventArgs)
         If gbl.valvY >= 1 Then
             gbl.valvY = gbl.valvY - 1
             ProgressBar2.Value = gbl.valvY
@@ -109,7 +109,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub Button13_Click(sender As Object, e As EventArgs)
         If gbl.valvZ <= 8 Then
             gbl.valvZ = gbl.valvZ + 1
             ProgressBar3.Value = gbl.valvZ
@@ -117,7 +117,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub Button12_Click(sender As Object, e As EventArgs)
         If gbl.valvZ >= 1 Then
             gbl.valvZ = gbl.valvZ - 1
             ProgressBar3.Value = gbl.valvZ
@@ -125,11 +125,11 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub Button14_Click(sender As Object, e As EventArgs)
         telnetMessage("W7")
     End Sub
 
-    Private Sub Button15_MouseDown(sender As Object, e As MouseEventArgs) Handles Button15.MouseDown
+    Private Sub Button15_MouseDown(sender As Object, e As MouseEventArgs)
         adelante()
         Timer1.Start()
     End Sub
@@ -142,7 +142,7 @@ Public Class Form1
             telnetMessage("A1")
         End If
     End Sub
-    Private Sub Button15_MouseUp(sender As Object, e As MouseEventArgs) Handles Button15.MouseUp
+    Private Sub Button15_MouseUp(sender As Object, e As MouseEventArgs)
         Timer1.Stop()
     End Sub
     Sub derecha()
@@ -154,49 +154,49 @@ Public Class Form1
         derecha()
     End Sub
 
-    Private Sub Button18_MouseDown(sender As Object, e As MouseEventArgs) Handles Button18.MouseDown
+    Private Sub Button18_MouseDown(sender As Object, e As MouseEventArgs)
         derecha()
         Timer2.Start()
     End Sub
 
-    Private Sub Button18_MouseUp(sender As Object, e As MouseEventArgs) Handles Button18.MouseUp
+    Private Sub Button18_MouseUp(sender As Object, e As MouseEventArgs)
         Timer2.Stop()
     End Sub
 
-    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+    Private Sub Button19_Click(sender As Object, e As EventArgs)
         Timer1.Interval = 100
         Timer2.Interval = 100
         Timer3.Interval = 100
         Timer4.Interval = 100
     End Sub
 
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+    Private Sub Button20_Click(sender As Object, e As EventArgs)
         Timer1.Interval = 200
         Timer2.Interval = 200
         Timer3.Interval = 300
         Timer4.Interval = 400
     End Sub
 
-    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+    Private Sub Button21_Click(sender As Object, e As EventArgs)
         Timer1.Interval = 300
         Timer2.Interval = 300
         Timer3.Interval = 300
         Timer4.Interval = 300
     End Sub
 
-    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+    Private Sub Button22_Click(sender As Object, e As EventArgs)
         Timer1.Interval = 500
         Timer2.Interval = 500
         Timer3.Interval = 500
         Timer4.Interval = 500
     End Sub
 
-    Private Sub Button16_MouseDown(sender As Object, e As MouseEventArgs) Handles Button16.MouseDown
+    Private Sub Button16_MouseDown(sender As Object, e As MouseEventArgs)
         abajo()
         Timer3.Start()
     End Sub
 
-    Private Sub Button16_MouseUp(sender As Object, e As MouseEventArgs) Handles Button16.MouseUp
+    Private Sub Button16_MouseUp(sender As Object, e As MouseEventArgs)
         Timer3.Stop()
     End Sub
     Sub abajo()
@@ -216,13 +216,20 @@ Public Class Form1
             telnetMessage("A4")
         End If
     End Sub
-    Private Sub Button17_MouseDown(sender As Object, e As MouseEventArgs) Handles Button17.MouseDown
+    Private Sub Button17_MouseDown(sender As Object, e As MouseEventArgs)
         izquierda()
         Timer4.Start()
     End Sub
 
-    Private Sub Button17_MouseUp(sender As Object, e As MouseEventArgs) Handles Button17.MouseUp
+    Private Sub Button17_MouseUp(sender As Object, e As MouseEventArgs)
         Timer4.Stop()
     End Sub
 
+    Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        TabControl1.Width = Me.Width - 40
+        TabControl1.Height = Me.Height - 63
+        GroupBox7.Location = New Point(TabControl1.Width - 232, 6)
+        telnetAns.Width = TabControl1.Width - 20
+        telnetAns.Height = TabControl1.Height - 287
+    End Sub
 End Class
