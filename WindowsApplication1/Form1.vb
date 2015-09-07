@@ -3,7 +3,6 @@ Imports System.Text
 Public Class Form1
     Dim joystickMode = False
     Dim pb1Location As Point
-    Dim gb7location As Point
     Dim mlX As Integer
     Dim mlY As Integer
     Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
@@ -17,13 +16,33 @@ Public Class Form1
         PictureBox1.Location = pb1Location
     End Sub
     Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+        'Sin esta condicion detecta cada movimiento del raton
+        ' se trata de que solamente se mueva el cuadro negro cuando se le da click
+        'por eso se le pone la bandera para que se detecte cuando se mueve el raton y se hizo click
         If joystickMode Then
 
             'updates the position of the joyStick
             Dim mouseOffsetX = MousePosition.X - mlX
             Dim mouseOffsetY = MousePosition.Y - mlY
-            PictureBox1.Location = New Point(pb1Location.X + mouseOffsetX, pb1Location.Y + mouseOffsetY)
-            Console.WriteLine("MouseOffset:" & mouseOffsetX & "," & mouseOffsetY)
+            Dim pbLocationX = pb1Location.X + mouseOffsetX
+            Dim pbLocationY = pb1Location.Y + mouseOffsetY
+            'rango de movimiento del cuedro negro
+            Dim rangeX As Integer
+            Dim rangeY As Integer
+            rangeX = GroupBox7.Width - PictureBox1.Width - 6 'offset para que no llegue al borde
+            rangeY = GroupBox7.Height - PictureBox1.Height - 6 'offset para que no llegue al borde
+
+            If pbLocationX >= rangeX Then pbLocationX = rangeX
+            If pbLocationY >= rangeY Then pbLocationY = rangeY
+            If pbLocationX <= 6 Then pbLocationX = 6
+            If pbLocationY <= 9 Then pbLocationY = 9
+
+            PictureBox1.Location = New Point(pbLocationX, pbLocationY)
+            Console.WriteLine("pblocation:" & pbLocationX & "," & pbLocationX)
+            'Console.WriteLine("MouseOffset:" & mouseOffsetX & "," & mouseOffsetY)
+
+
+
 
         End If
     End Sub
