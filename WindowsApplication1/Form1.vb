@@ -1,7 +1,32 @@
 ﻿
 Imports System.Text
 Public Class Form1
+    Dim joystickMode = False
+    Dim pb1Location As Point
+    Dim gb7location As Point
+    Dim mlX As Integer
+    Dim mlY As Integer
+    Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
+        joystickMode = True
+        mlX = MousePosition.X
+        mlY = MousePosition.Y
+        pb1Location = PictureBox1.Location
+    End Sub
+    Private Sub PictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
+        joystickMode = False
+        PictureBox1.Location = pb1Location
+    End Sub
+    Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+        If joystickMode Then
 
+            'updates the position of the joyStick
+            Dim mouseOffsetX = MousePosition.X - mlX
+            Dim mouseOffsetY = MousePosition.Y - mlY
+            PictureBox1.Location = New Point(pb1Location.X + mouseOffsetX, pb1Location.Y + mouseOffsetY)
+            Console.WriteLine("MouseOffset:" & mouseOffsetX & "," & mouseOffsetY)
+
+        End If
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Form2.Show()
         Me.Hide()
@@ -159,33 +184,25 @@ Public Class Form1
         telnetAns.Height = TabControl1.Height - 287
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub Button23_Click(sender As Object, e As EventArgs)
+        'Set speed
+        gbl.speed = NUD_Speed.Value
+        gbl.ini.WriteValue("control", "speed", NUD_Speed.Value)
 
-    End Sub
-
-    Private Sub PictureBox1_DragEnter(sender As Object, e As DragEventArgs) Handles PictureBox1.DragEnter
-        Console.WriteLine("drag enter")
-    End Sub
-
-    Private Sub PictureBox1_DragOver(sender As Object, e As DragEventArgs) Handles PictureBox1.DragOver
-        Console.WriteLine("drag over")
-    End Sub
-
-    Private Sub addInput_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles addInput.MaskInputRejected
-
-    End Sub
-
-    Private Sub TabPage2_GotFocus(sender As Object, e As EventArgs) Handles TabPage2.GotFocus
-        Console.WriteLine("got focus")
-    End Sub
-
-    Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
-        Dim holdLeft = Control.MousePosition.X - Me.Left
-        Dim holdTop = Control.MousePosition.Y - Me.Top
-        Console.WriteLine(holdLeft, holdTop)
-    End Sub
-
-    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
-
+        'Set IP Address
+        If addInput.Text <> "" Then
+            gbl.IPaddress = addInput.Text
+            gbl.ini.WriteValue("connection", "ipaddress", addInput.Text)
+        Else
+            gbl.IPaddress = "127.0.0.1"
+        End If
+        'Set port
+        If port.Text = "" Then
+            gbl.telnetPort = 23
+            gbl.ini.WriteValue("connection", "port", 23)
+        Else
+            gbl.telnetPort = CInt(port.Text)
+            gbl.ini.WriteValue("connection", "port", port.Text)
+        End If
     End Sub
 End Class

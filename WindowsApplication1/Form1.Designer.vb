@@ -27,9 +27,9 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.JoyStickTicker = New System.Windows.Forms.Timer(Me.components)
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.NUD_Speed = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.port = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -67,7 +67,7 @@ Partial Class Form1
         Me.ipShow = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NUD_Speed, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,13 +92,13 @@ Partial Class Form1
         '
         Me.Timer3.Interval = 300
         '
-        'Timer4
+        'JoyStickTicker
         '
-        Me.Timer4.Interval = 300
+        Me.JoyStickTicker.Interval = 500
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.NumericUpDown1)
+        Me.TabPage2.Controls.Add(Me.NUD_Speed)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.port)
         Me.TabPage2.Controls.Add(Me.Label2)
@@ -113,13 +113,15 @@ Partial Class Form1
         Me.TabPage2.Text = "Settings"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'NumericUpDown1
+        'NUD_Speed
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(218, 76)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {9, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(100, 20)
-        Me.NumericUpDown1.TabIndex = 13
+        Me.NUD_Speed.Location = New System.Drawing.Point(218, 76)
+        Me.NUD_Speed.Maximum = New Decimal(New Integer() {9, 0, 0, 0})
+        Me.NUD_Speed.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
+        Me.NUD_Speed.Name = "NUD_Speed"
+        Me.NUD_Speed.Size = New System.Drawing.Size(100, 20)
+        Me.NUD_Speed.TabIndex = 13
+        Me.NUD_Speed.Value = New Decimal(New Integer() {3, 0, 0, 0})
         '
         'Label4
         '
@@ -486,7 +488,7 @@ Partial Class Form1
         Me.Text = "Telnet Message Board"
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NUD_Speed, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
@@ -504,7 +506,7 @@ Partial Class Form1
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Timer3 As Timer
-    Friend WithEvents Timer4 As Timer
+    Friend WithEvents JoyStickTicker As Timer
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents telnetAns As TextBox
@@ -535,7 +537,7 @@ Partial Class Form1
     Friend WithEvents action As Label
     Friend WithEvents ipShow As Label
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents NUD_Speed As NumericUpDown
     Friend WithEvents Label4 As Label
     Friend WithEvents port As MaskedTextBox
     Friend WithEvents Label2 As Label
